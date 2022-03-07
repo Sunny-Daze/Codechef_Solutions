@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
 #define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
@@ -57,17 +56,17 @@ ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) %
 ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
 /*--------------------------------------------------------------------------------------------------------------------------*/
 void solve() {
-    int n, m;
+    ll n, m;
     cin >> n >> m;
-    int mini=0, maxi = INT_MAX;
-    for (int i = 0; i < m; i++) {
-        int k;
+    ll mini=0, maxi = INT_MAX;
+    for (ll i = 0; i < m; i++) {
+        ll k;
         cin >> k;
         maxi = min(k, maxi);
         mini = max(k, mini);
     }
 
-    for(int i=0;i<n;i++){
+    for(ll i=0;i<n;i++){
         cout << max(abs(i-mini), abs(i-maxi)) << " ";
     }
     cout << nline;
